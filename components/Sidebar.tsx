@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation"
 import { useMemo } from "react";
 import { BiHome, BiSearch } from "react-icons/bi"
+import Box from "./Box";
 
 interface SidebarProps {
     children: React.ReactNode
@@ -41,6 +42,9 @@ const Sidebar: React.FC<SidebarProps> = ({children}) => {
                 p-2">
             <Box>
                 "Sidebar navigator"
+            </Box>
+            <Box className="overflow-y-auto h-full">
+                "Song Library"
             </Box>
         </div>
     </div>
