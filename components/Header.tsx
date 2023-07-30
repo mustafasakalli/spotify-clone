@@ -1,9 +1,8 @@
 "use client"
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { twMerge } from "tailwind-merge";
-import { RxCaretLeft } from "react-icons/rx"
-import { RxCaretRight } from "react-icons/rx"
+import { RxCaretLeft, RxCaretRight } from "react-icons/rx"
 
 
 interface HeaderProps {
@@ -13,6 +12,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ children, className}) => {
   
+    const router = useRouter();
     
     const handleLogout = () => {
         //logout logic
@@ -29,7 +29,9 @@ export const Header: React.FC<HeaderProps> = ({ children, className}) => {
         
         <div className="w-full mb-4 flex items-center justify-between">
             <div className="hidden md:flex gap-x-2 items-center">
-                <button className="
+                <button
+                 onClick={() => router.back()}
+                 className="
                     rounded-full
                     bg-black
                     flex
@@ -40,7 +42,9 @@ export const Header: React.FC<HeaderProps> = ({ children, className}) => {
                     ">
                         <RxCaretLeft size={26} />
                 </button>
-                <button className="
+                <button
+                 onClick={() => router.forward()}
+                 className="
                     rounded-full
                     bg-black
                     flex
