@@ -1,3 +1,5 @@
+import { Header } from "@/components/Header";
+
 export default function Home() {
   return (
     <div className="
@@ -8,6 +10,10 @@ export default function Home() {
       h-full
       w-full
     ">
+
+      <Header>
+        
+      </Header>
       
     </div>    
   )
